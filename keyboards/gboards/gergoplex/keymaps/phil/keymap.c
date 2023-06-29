@@ -58,6 +58,17 @@ enum {
  *  '-------------------------'            '-------------------------'
  */
 
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_GUI_C:
+            // Do not select the hold action when another key is tapped.
+            return false;
+        default:
+            // Immediately select the hold action when another key is tapped.
+            return true;
+    }
+}
+
 // Blank template at the bottom
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Keymap 0: Basic layer
