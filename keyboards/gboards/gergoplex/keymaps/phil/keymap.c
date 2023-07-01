@@ -41,7 +41,7 @@ enum {
     _LYR_NPAD, // number pad
     _LYR_NFN,  // numbers/Fn keys
     _LYR_NAV2, // nav 2
-    _LYR_BMOD  // base mods
+    _LYR_REVS  // reverse base
 };
 
 /* Combomap
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,    KC_Y, KC_U,     KC_I,        KC_O,       KC_P,
             KC_A,     KC_S,     KC_D,     KC_F,     KC_G,    KC_H, KC_J,     KC_K,        KC_L,       KC_SCLN,
             KC_CTL_Z, KC_SFT_X, KC_GUI_C, KC_ALT_V, KC_B,    KC_N, KC_ALT_M, KC_GUI_COMM, KC_SFT_DOT, KC_CTL_SLSH,
-            MO(_LYR_NFN), KC_LSFT, LT(_LYR_NPAD, KC_BSPC),     MO(_LYR_SYMB),   KC_SPC, KC_DEL // MO(_LYR_BMOD)
+            MO(_LYR_NFN), LSFT_T(KC_SPC), LT(_LYR_NPAD, KC_BSPC),     MO(_LYR_SYMB),   RSFT_T(KC_SPC), KC_DEL // MO(_LYR_BMOD)
     ),
 // Keymap 1: Symbols/Nav layer
 [_LYR_SYMB] = LAYOUT_split_3x5_3(
@@ -110,8 +110,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_DEL, KC_END, KC_PGDN, KC_TRNS,
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_RALT, KC_RGUI, KC_RSFT, KC_RCTL,
             KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_TRNS, KC_TRNS
-    )/*,
-// Keymap 5: Modifiers Overlay
+    ),
+/*// Keymap 5: Modifiers Overlay
 [_LYR_BMOD]  LAYOUT_split_3x5_3(
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -120,4 +120,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_TRNS, KC_SPC, KC_TRNS,
             KC_TRNS, KC_TRNS, KC_TRNS
     )*/
+// New Keymap 5: Reversed Keyboard for one-handed typing
+[_LYR_REVS] = LAYOUT_split_3x5_3(
+            KC_P,        KC_O,       KC_I,        KC_U,     KC_Y, KC_T,    KC_R,     KC_E,     KC_W,     KC_Q,
+            KC_SCLN,     KC_L,       KC_K,        KC_J,     KC_H, KC_G,    KC_F,     KC_D,     KC_S,     KC_A,
+            KC_CTL_SLSH, KC_SFT_DOT, KC_GUI_COMM, KC_ALT_M, KC_N, KC_B,    KC_ALT_V, KC_GUI_C, KC_SFT_X, KC_CTL_Z,
+            MO(_LYR_NFN), KC_LSFT, LT(_LYR_NPAD, KC_BSPC),     MO(_LYR_SYMB),   KC_SPC, KC_DEL // MO(_LYR_BMOD)
+    )
 };
