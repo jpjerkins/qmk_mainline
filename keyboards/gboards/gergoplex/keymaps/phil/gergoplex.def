@@ -28,10 +28,6 @@
 // COMB(klPgdn,    KC_PGDN,   KC_K,   KC_L)
 // COMB(olRight,   KC_RGHT,   KC_O,   KC_L)
 // COMB(opBspc,    KC_BSPC,   KC_O,   KC_P)
-
-COMB(lRevs, MO(5), LSFT_T(KC_SPC), LT(2, KC_BSPC))
-COMB(rRevs, MO(5), MO(1),   RSFT_T(KC_SPC))
-
 COMB(lsemiEnt,  KC_ENT,    KC_L,   KC_SCLN)
 
 // SUBS(rastafarianism,       "I'd just like to interject for a moment.",       KC_H, KC_J, KC_K, KC_L)
