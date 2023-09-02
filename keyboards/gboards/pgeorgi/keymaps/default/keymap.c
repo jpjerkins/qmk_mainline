@@ -102,8 +102,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 // Keymap 3: Number Pad layer
 [_LYR_NPAD]  LAYOUT(
-            KC_TRNS, KC_TRNS, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,            KC_NUM, KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
-            // KC_BTN1, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,            KC_MS_U, KC_P4, KC_P5, KC_P6, KC_PPLS,
+            KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,            KC_NUM, KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
+            // KC_BTN1, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,            KC_MS_U, KC_P4, KC_P5, KC_P6, KC_PPLS,
             KC_TRNS, KC_LCTL, KC_SFT_BTN3, KC_BTN2, KC_ALT_BTN1, KC_TRNS,
             KC_MS_D, KC_ALT_P1, KC_GUI_P2, KC_SFT_P3, KC_CTL_PPLS, KC_TRNS,
             KC_TRNS, KC_RALT, KC_TRNS,            KC_P0, KC_PDOT, KC_PENT
