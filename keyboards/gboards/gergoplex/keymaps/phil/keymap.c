@@ -33,7 +33,6 @@
 #define KC_CTL_SLSH MT(MOD_RCTL, KC_SLSH)
 
 #include QMK_KEYBOARD_H
-#include "g/keymap_engine.h"
 #include "g/keymap_combo.h"
 #include "keymap_steno.h"
 
