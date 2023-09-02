@@ -33,14 +33,17 @@
 #define KC_CTL_SLSH MT(MOD_RCTL, KC_SLSH)
 
 #include QMK_KEYBOARD_H
+#include "g/keymap_engine.h"
 #include "g/keymap_combo.h"
+#include "keymap_steno.h"
 
 enum {
     _LYR_BASE, // default layer
     _LYR_SYMB, // symbols/nav
     _LYR_NPAD, // number pad
     _LYR_NFN,  // numbers/Fn keys
-    _LYR_NAV2 // nav 2
+    _LYR_NAV2, // nav 2
+    _LYR_STEN  // steno
 };
 
 /* Combomap
@@ -75,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,    KC_Y, KC_U,     KC_I,        KC_O,       KC_P,
             KC_A,     KC_S,     KC_D,     KC_F,     KC_G,    KC_H, KC_J,     KC_K,        KC_L,       KC_SCLN,
             KC_CTL_Z, KC_SFT_X, KC_GUI_C, KC_ALT_V, KC_B,    KC_N, KC_ALT_M, KC_GUI_COMM, KC_SFT_DOT, KC_CTL_SLSH,
-            MO(_LYR_NFN), KC_LSFT, LT(_LYR_NPAD, KC_BSPC),     MO(_LYR_SYMB),   KC_SPC, KC_DEL // MO(_LYR_BMOD)
+            MO(_LYR_NFN), KC_LSFT, LT(_LYR_NPAD, KC_BSPC),     MO(_LYR_SYMB),   KC_SPC, DF(_LYR_STEN)
     ),
 // Keymap 1: Symbols/Nav layer
 [_LYR_SYMB] = LAYOUT_split_3x5_3(
@@ -109,5 +112,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_DEL, KC_END, KC_PGDN, KC_TRNS,
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_RALT, KC_RGUI, KC_RSFT, KC_RCTL,
             KC_TRNS, KC_TRNS, KC_TRNS,            KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+// Keymap 4: Nav Overlay layer
+[_LYR_STEN] = LAYOUT_split_3x5_3(
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,            STN_ST3, KC_NO, KC_NO, KC_NO, KC_NO,
+            STN_S2, STN_TL, STN_PL, STN_HL, STN_ST1,            STN_FR, STN_PR, STN_LR, STN_TR, STN_DR,
+            STN_S1, STN_KL, STN_WL, STN_RL, STN_ST2,            STN_RR, STN_BR, STN_GR, STN_SR, STN_ZR,
+            STN_N1, STN_A, STN_O,            STN_E, STN_U, DF(_LYR_BASE)
     )
 };

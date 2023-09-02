@@ -5,3 +5,4 @@
 #define PERMISSIVE_HOLD_PER_KEY
 #define MOUSEKEY_MAX_SPEED 4
 #define DEBOUNCE 15
+#define FORCE_NKRO
